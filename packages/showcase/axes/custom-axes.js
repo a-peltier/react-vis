@@ -35,8 +35,9 @@ const WORDS = [
   'skateboard',
   'wow',
   'such',
+  // eslint-disable-next-line react/jsx-key
   <tspan>
-    <tspan x="0" dy="1em">
+    <tspan key="" mx="0" dy="1em">
       Multiline
     </tspan>
     <tspan x="0" dy="1em">
@@ -44,7 +45,7 @@ const WORDS = [
     </tspan>
   </tspan>
 ];
-export default function Example(props) {
+export default function Example() {
   return (
     <XYPlot margin={MARGIN} width={300} height={300}>
       <XAxis top={0} hideLine tickValues={[0, 1, 3, 4, 5]} title="X" />
@@ -53,7 +54,10 @@ export default function Example(props) {
       <YAxis left={50} tickFormat={v => v * v} />
       <YAxis hideLine left={150} tickFormat={v => WORDS[v]} />
       <MarkSeries
-        data={[{x: 0, y: 0}, {x: 5, y: 5}]}
+        data={[
+          {x: 0, y: 0},
+          {x: 5, y: 5}
+        ]}
         opacity={0}
         opacityType="linear"
       />

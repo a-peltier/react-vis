@@ -312,7 +312,7 @@ function generateCharts(seriesData, props) {
       {[VerticalBarSeries, LineSeries, MarkSeries].map((Type, key) => (
         <XYPlot key={key} {...defaultXYPlotProps} {...props}>
           {seriesData.map((d, i) => (
-            <Type {...d} />
+            <Type key={i} {...d} />
           ))}
         </XYPlot>
       ))}
